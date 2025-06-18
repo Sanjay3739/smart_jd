@@ -56,7 +56,7 @@ cd beckand
 ```
 Start the FastAPI server:
 ```bash
-uvicorn app.main:app --reload
+uvicorn main:app --reload
 ```
 
 The API will be available at `http://localhost:8000`

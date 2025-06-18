@@ -14,10 +14,15 @@ A FastAPI-based application for managing and analyzing job descriptions using Go
 ## Project Structure
 
 ```
-recruitment-ai/
-├── app.py              # Main FastAPI application
-├── frontend/           # Frontend application files
-├── uploaded_jds/       # Directory for temporary file uploads
+.
+├── backend/            # Backend FastAPI application
+│   ├── app/
+│   ├── main.py
+│   └── uploaded_jds/
+├── frontend/           # Frontend Streamlit application
+│   ├── .streamlit/
+│   ├── css/
+│   └── main.py
 ├── requirements.txt    # Python dependencies
 └── README.md
 ```
@@ -26,9 +31,12 @@ recruitment-ai/
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
-cd recruitment-ai
+git clone https://github.com/Sanjay3739/smart_jd.git
 ```
+
+**Note**: If you have already cloned the repository, navigate to the project root directory.
+
+
 
 2. Create and activate a virtual environment:
 ```bash
@@ -50,18 +58,21 @@ API_BASE =your_fast_api_url
 
 ## Running the Application
 
-navigate folder path :
+### Backend
+
+1. Navigate to the backend directory:
 ```bash
-cd beckand
+cd backend
 ```
-Start the FastAPI server:
+
+2. Start the FastAPI server:
 ```bash
 uvicorn main:app --reload
 ```
 
 The API will be available at `http://localhost:8000`
 
-## Frontend Setup
+### Frontend
 
 1. Navigate to the frontend directory:
 ```bash
@@ -72,6 +83,8 @@ cd frontend
 ```bash
 streamlit run main.py
 ```
+
+Both the backend and frontend applications should now be running concurrently.
 
 The frontend will be available at `http://localhost:8501`
 
@@ -154,6 +167,27 @@ These files can be used to test:
 - Job description parsing
 - Skill matching and gap analysis
 - Document comparison features
+
+## How to Use
+
+1.  **Upload Job Descriptions**: Use the frontend to upload job description files (PDF, DOCX, DOC) or manually input text.
+2.  **Generate Job Descriptions**: Provide parameters to the application to generate new job descriptions.
+3.  **Compare and Analyze**: Compare uploaded/generated job descriptions with resumes to get match scores and identify skill gaps.
+4.  **Review API Documentation**: Access the Swagger UI or ReDoc for detailed API endpoint information.
+
+## Contributing
+
+We welcome contributions to this project! If you'd like to contribute, please follow these steps:
+
+1.  Fork the repository.
+2.  Create a new branch (`git checkout -b feature/your-feature-name`).
+3.  Make your changes and commit them (`git commit -m 'Add new feature'`).
+4.  Push to the branch (`git push origin feature/your-feature-name`).
+5.  Open a Pull Request.
+
+## Support
+
+If you encounter any issues or have questions, please open an issue on the GitHub repository.
 
 ## License
 
